@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+ 
+
+  <PropertyGroup>
+	  <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MMS.DataManager.NotificationManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Http.Client" />
+    <ProjectReference Include="..\MMS.DataManager.NotificationManagement.Application.Contracts\MMS.DataManager.NotificationManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

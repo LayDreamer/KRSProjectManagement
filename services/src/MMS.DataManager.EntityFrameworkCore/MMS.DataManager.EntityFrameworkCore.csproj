@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\..\modules\BasicManagement\src\MMS.DataManager.BasicManagement.EntityFrameworkCore\MMS.DataManager.BasicManagement.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\..\modules\DataDictionaryManagement\src\MMS.DataManager.DataDictionaryManagement.EntityFrameworkCore\MMS.DataManager.DataDictionaryManagement.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\..\modules\NotificationManagement\src\MMS.DataManager.NotificationManagement.EntityFrameworkCore\MMS.DataManager.NotificationManagement.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\..\modules\LanguageManagement\src\MMS.DataManager.LanguageManagement.EntityFrameworkCore\MMS.DataManager.LanguageManagement.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\MMS.DataManager.Domain\MMS.DataManager.Domain.csproj" />
+        <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+            <PrivateAssets>compile; contentFiles; build; buildMultitargeting; buildTransitive; analyzers; native</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>
+</Project>

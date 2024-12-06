@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MMS.DataManager.BasicManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\MMS.DataManager.BasicManagement.Application\MMS.DataManager.BasicManagement.Application.csproj" />
+    <ProjectReference Include="..\MMS.DataManager.BasicManagement.Domain.Tests\MMS.DataManager.BasicManagement.Domain.Tests.csproj" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+  </ItemGroup>
+
+</Project>

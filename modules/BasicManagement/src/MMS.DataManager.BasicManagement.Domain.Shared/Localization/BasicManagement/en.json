@@ -1,0 +1,28 @@
+{
+  "culture": "en",
+  "texts": {
+    "MyAccount":  "My account",
+    "SamplePageMessage": "A sample page for the BasicManagement module",
+    "Permission:Query": "Query",
+    "Permission:Create": "Create",
+    "Permission:Update": "Update",
+    "Permission:Delete": "Delete",
+    "Permission:Export": "Export",
+    "Permission:Enable": "Enable|Disable",
+    "Permission:SystemManagement": "SystemManagement",
+    "Permission:AuditLogManagement": "AuditLog",
+    "Permission:HangfireManagement": "BackgroundTask",
+    "Permission:SettingManagement": "SettingManagement",
+    "Permission:IdentitySecurityLog": "IdentitySecurityLog",
+    "Permission:OrganizationUnitManagement": "OrganizationUnitManagement",
+    "Permission:FeatureManagement": "FeatureManagement",
+    "Setting.Group.System": "System",
+    "MMS.DataManager.BasicManagement:100001": "OrganizationUnit Not Exist",
+    "MMS.DataManager.BasicManagement:100002": "UserLockedOut",
+    "MMS.DataManager.BasicManagement:100003": "UserOrPasswordMismatch",
+    "MMS.DataManager.BasicManagement:100004": "UserDisabled",
+    "MMS.DataManager.BasicManagement:100005": "Tenant Not Exist",
+    "MMS.DataManager.BasicManagement:100006": "Not Support Set ConnectionString",
+    "MMS.DataManager.BasicManagement:100007": "User Not Exist"
+  }
+}

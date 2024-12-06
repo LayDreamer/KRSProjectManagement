@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.FileManagement</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMS.DataManager.FileManagement.Application\MMS.DataManager.FileManagement.Application.csproj" />
+        <ProjectReference Include="..\MMS.DataManager.FileManagement.Domain.Tests\MMS.DataManager.FileManagement.Domain.Tests.csproj" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    </ItemGroup>
+
+</Project>

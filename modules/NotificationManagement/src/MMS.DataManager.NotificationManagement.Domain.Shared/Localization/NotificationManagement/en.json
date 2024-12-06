@@ -1,0 +1,16 @@
+{
+  "culture": "en",
+  "texts": {
+    "ManageYourProfile":  "Manage your profile",
+    "SamplePageMessage": "A sample page for the NotificationManagement module",
+    "MMS.DataManager.NotificationManagement:100001": "Receiver Not Null",
+    "MMS.DataManager.NotificationManagement:100002": "Message Not Exist",
+    "MMS.DataManager.NotificationManagement:100003": "MessageType Unknown",
+    "MMS.DataManager.NotificationManagement:100004": "User UnSubscription",
+    "MMS.DataManager.NotificationManagement:100005": "Message Title NotNull",
+    "MMS.DataManager.NotificationManagement:100006": "Message Content NotNull",
+    "MMS.DataManager.NotificationManagement:100007": "Message Receiver NotNull",
+    "Permission:NotificationManagement": "NotificationManagement",
+    "Permission:NotificationSubscriptionManagement": "NotificationSubscriptionManagement"
+  }
+}

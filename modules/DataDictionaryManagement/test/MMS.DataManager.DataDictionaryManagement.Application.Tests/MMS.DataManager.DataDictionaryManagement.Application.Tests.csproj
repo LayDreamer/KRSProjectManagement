@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.DataDictionaryManagement</RootNamespace>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMS.DataManager.DataDictionaryManagement.Application\MMS.DataManager.DataDictionaryManagement.Application.csproj" />
+        <ProjectReference Include="..\MMS.DataManager.DataDictionaryManagement.Domain.Tests\MMS.DataManager.DataDictionaryManagement.Domain.Tests.csproj" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    </ItemGroup>
+
+</Project>

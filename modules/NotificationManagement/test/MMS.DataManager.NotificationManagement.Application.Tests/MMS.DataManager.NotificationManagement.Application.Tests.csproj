@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.NotificationManagement</RootNamespace>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMS.DataManager.NotificationManagement.Application\MMS.DataManager.NotificationManagement.Application.csproj" />
+        <ProjectReference Include="..\MMS.DataManager.NotificationManagement.Domain.Tests\MMS.DataManager.NotificationManagement.Domain.Tests.csproj" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    </ItemGroup>
+
+</Project>

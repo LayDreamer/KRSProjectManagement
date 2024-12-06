@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MMS.DataManager.BasicManagement</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+    <ProjectReference Include="..\MMS.DataManager.BasicManagement.Application.Contracts\MMS.DataManager.BasicManagement.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

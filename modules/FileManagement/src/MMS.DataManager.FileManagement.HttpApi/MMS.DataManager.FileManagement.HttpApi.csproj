@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.FileManagement</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore.Annotations" />
+        <PackageReference Include="Volo.Abp.AspNetCore.Mvc" />
+        <ProjectReference Include="..\MMS.DataManager.FileManagement.Application.Contracts\MMS.DataManager.FileManagement.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

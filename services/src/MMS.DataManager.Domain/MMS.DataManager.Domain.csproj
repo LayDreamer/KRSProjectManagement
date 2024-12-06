@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>MMS.DataManager</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\modules\BasicManagement\src\MMS.DataManager.BasicManagement.Domain\MMS.DataManager.BasicManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\..\modules\DataDictionaryManagement\src\MMS.DataManager.DataDictionaryManagement.Domain\MMS.DataManager.DataDictionaryManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\..\modules\NotificationManagement\src\MMS.DataManager.NotificationManagement.Domain\MMS.DataManager.NotificationManagement.Domain.csproj" />
+    <ProjectReference Include="..\..\..\modules\LanguageManagement\src\MMS.DataManager.LanguageManagement.Domain\MMS.DataManager.LanguageManagement.Domain.csproj" />
+    <ProjectReference Include="..\MMS.DataManager.Domain.Shared\MMS.DataManager.Domain.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Emailing" />
+  </ItemGroup>
+
+
+</Project>

@@ -1,0 +1,7 @@
+namespace MMS.DataManager.BasicManagement.Roles.Dtos
+{
+    public class PagingRoleListInput : PagingBase
+    {
+        public string Filter { get; set; }
+    }
+}

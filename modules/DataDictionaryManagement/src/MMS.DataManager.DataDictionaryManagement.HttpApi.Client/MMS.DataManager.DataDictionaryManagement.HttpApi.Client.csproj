@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  
+    <PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.DataDictionaryManagement</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Http.Client" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\MMS.DataManager.DataDictionaryManagement.Application.Contracts\MMS.DataManager.DataDictionaryManagement.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>

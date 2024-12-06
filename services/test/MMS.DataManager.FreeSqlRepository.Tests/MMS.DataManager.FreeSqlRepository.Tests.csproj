@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+
+        <IsPackable>false</IsPackable>
+
+        <RootNamespace>MMS.DataManager.FreeSqlRepository.Tests</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="FreeSql.Provider.Sqlite" />
+        <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\MMS.DataManager.EntityFrameworkCore\MMS.DataManager.EntityFrameworkCore.csproj" />
+        <ProjectReference Include="..\..\src\MMS.DataManager.FreeSqlRepository\MMS.DataManager.FreeSqlRepository.csproj" />
+        <ProjectReference Include="..\MMS.DataManager.TestBase\MMS.DataManager.TestBase.csproj" />
+    </ItemGroup>
+
+</Project>

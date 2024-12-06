@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <RootNamespace>MMS.DataManager.NotificationManagement</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.Ddd.Domain" />
+     
+        <ProjectReference Include="..\MMS.DataManager.NotificationManagement.Domain.Shared\MMS.DataManager.NotificationManagement.Domain.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

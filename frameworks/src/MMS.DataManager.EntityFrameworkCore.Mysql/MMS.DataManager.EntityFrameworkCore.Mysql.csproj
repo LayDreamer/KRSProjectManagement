@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <RootNamespace />
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MMS.DataManager.EntityFrameworkCore\MMS.DataManager.EntityFrameworkCore.csproj" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" />
+    </ItemGroup>
+</Project>

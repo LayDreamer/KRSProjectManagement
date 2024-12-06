@@ -1,0 +1,15 @@
+{
+  "culture": "zh-Hans",
+  "texts": {
+    "Welcome": "欢迎",
+    "Permission:Cap": "CAP面板",
+    "MMS.DataManager:100001": "起始页必须大于等于1",
+    "MMS.DataManager:100002": "每页最大记录数不能超过100000",
+    "MMS.DataManager:100003": "{0}不能为空",
+    "MMS.DataManager:PermissionDenied": "权限不足",
+    "MMS.DataManager:ParameterValidationFailed": "请求参数验证失败",
+    "MMS.DataManager:EntityNotFound": "实体不存在",
+    "MMS.DataManager:Unimplemented ": "未实现功能",
+    "MMS.DataManager:DbUpdateConcurrency ": "数据已被修改,请重新提交."
+  }
+}
