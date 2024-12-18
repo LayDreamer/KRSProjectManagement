@@ -84,5 +84,11 @@ namespace MMS.DataManager.BasicManagement.Systems
         {
             return _userAppService.FindByUserNameAsync(input);
         }
+
+        [HttpPost("findByName")]
+        public async Task<List<IdentityUserDto>> GetUsersByNames(string name)
+        {
+            return await _userAppService.GetUsersByNames(name);
+        }
     }
 }

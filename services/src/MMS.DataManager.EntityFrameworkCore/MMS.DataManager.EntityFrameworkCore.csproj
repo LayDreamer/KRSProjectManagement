@@ -12,6 +12,7 @@
         <ProjectReference Include="..\..\..\modules\NotificationManagement\src\MMS.DataManager.NotificationManagement.EntityFrameworkCore\MMS.DataManager.NotificationManagement.EntityFrameworkCore.csproj" />
         <ProjectReference Include="..\..\..\modules\LanguageManagement\src\MMS.DataManager.LanguageManagement.EntityFrameworkCore\MMS.DataManager.LanguageManagement.EntityFrameworkCore.csproj" />
         <ProjectReference Include="..\MMS.DataManager.Domain\MMS.DataManager.Domain.csproj" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
         <PackageReference Include="Volo.Abp.EntityFrameworkCore.MySQL" />
     </ItemGroup>
     <ItemGroup>

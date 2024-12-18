@@ -57,5 +57,13 @@ namespace MMS.DataManager.BasicManagement.Users
         /// 通过username获取用户信息
         /// </summary>
         Task<IdentityUserDto> FindByUserNameAsync(FindByUserNameInput input);
+
+
+        /// <summary>
+        /// 通过Name获取用户信息
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        Task<List<IdentityUserDto>> GetUsersByNames(string name);
     }
 }

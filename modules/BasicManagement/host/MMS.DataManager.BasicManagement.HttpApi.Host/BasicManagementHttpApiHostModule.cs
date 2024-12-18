@@ -75,6 +75,7 @@ public class BasicManagementHttpApiHostModule : AbpModule
         app.UseAuditing();
         app.UseAbpSerilogEnrichers();
         app.UseConfiguredEndpoints();
+        
     }
     /// <summary>
     /// 配置虚拟文件系统

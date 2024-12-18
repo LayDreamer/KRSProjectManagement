@@ -10,20 +10,41 @@ namespace MMS.DataManager.Project.AggregateRoot
 {
     public class ProjectInfo : FullAuditedAggregateRoot<Guid>
     {
-        /// <summary>
-        /// 项目名称
-        /// </summary>
-        public string Name {  get; set; }
+        public string Name { get; set; }
 
-        public Guid ProjectTemplateId { get; set; }
+        public ProjectLevel Level { get; set; }
 
-        public ProjectTemplate ProjectTemplate { get; set; }
+        public Guid TemplateId { get; set; }
 
-        public List<ProjectFieldValue> FiledValues { get; set; }
+        public ProjectTemplate Template { get; set; }
 
-        public ProjectInfo() 
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        public ProjectStatus Status { get; set; }
+
+        public ProjectReport Report { get; set; }
+
+        public string DingTalkGroup {  get; set; }
+
+        public Guid ClassificationId {  get; set; }
+
+        public ProjectClassification Classification { get; set; }
+
+        public string Description { get; set; }
+
+        public string ProgressReport {  get; set; }
+
+        public virtual List<ProjectUser> ProjectUsers { get; set; }
+
+        public virtual List<ProjectOrganization> ProjectOrganizations { get; set; }
+
+
+        public ProjectInfo()
         {
-            FiledValues = new List<ProjectFieldValue>();
+            ProjectUsers = new List<ProjectUser>();
+            ProjectOrganizations = new List<ProjectOrganization>();
         }
     }
 }

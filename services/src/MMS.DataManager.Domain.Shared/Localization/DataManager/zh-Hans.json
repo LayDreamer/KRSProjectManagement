@@ -28,6 +28,7 @@
     "Enum:TestType:Delete:1":"删除",
     "Feature:TestGroup": "测试功能分组",
     "Feature:TestEnable": "测试Checkbox-bool类型",
-    "Feature:TestString": "测试Input-string类型"
+    "Feature:TestString": "测试Input-string类型",
+    "MMS.DataManager:LoginOver":"登录过期" 
   }
 }

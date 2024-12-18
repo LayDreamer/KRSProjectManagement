@@ -479,39 +479,13 @@ namespace MMS.DataManager.Migrations
                     b.ToTable("AbpNotificationSubscriptions", (string)null);
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectFieldValue", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectClassification", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid?>("FieldId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("ProjectId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid?>("ProjectInfoId")
-                        .HasColumnType("char(36)");
-
-                    b.Property<Guid>("ProjectTemplateField")
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("Value")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("FieldId");
-
-                    b.HasIndex("ProjectInfoId");
-
-                    b.ToTable("AppProjectFieldValue", (string)null);
-                });
-
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectInfo", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .HasColumnType("char(36)");
+                    b.Property<int>("Code")
+                        .HasColumnType("int");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
@@ -558,19 +532,27 @@ namespace MMS.DataManager.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
-                    b.Property<Guid>("ProjectTemplateId")
+                    b.Property<Guid>("OrganizationId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("ParentId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectTemplateId");
+                    b.HasIndex("OrganizationId");
 
-                    b.ToTable("AppProjectInfo", (string)null);
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("AppProjectClassification", (string)null);
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectInfo", b =>
                 {
                     b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("ClassificationId")
                         .HasColumnType("char(36)");
 
                     b.Property<string>("ConcurrencyStamp")
@@ -587,6 +569,124 @@ namespace MMS.DataManager.Migrations
                     b.Property<Guid?>("CreatorId")
                         .HasColumnType("char(36)")
                         .HasColumnName("CreatorId");
+
+                    b.Property<Guid?>("DeleterId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("DeleterId");
+
+                    b.Property<DateTime?>("DeletionTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("DeletionTime");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("DingTalkGroup")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("EndTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("ExtraProperties")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("ExtraProperties");
+
+                    b.Property<bool>("IsDeleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("tinyint(1)")
+                        .HasDefaultValue(false)
+                        .HasColumnName("IsDeleted");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("LastModificationTime");
+
+                    b.Property<Guid?>("LastModifierId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("LastModifierId");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ProgressReport")
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Report")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("TemplateId")
+                        .HasColumnType("char(36)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClassificationId");
+
+                    b.HasIndex("TemplateId");
+
+                    b.ToTable("AppProjectInfo", (string)null);
+                });
+
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectOrganization", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("OrganizationId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid>("ProjectID")
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("ProjectInfoId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrganizationId");
+
+                    b.HasIndex("ProjectInfoId");
+
+                    b.ToTable("AppProjectOrganization", (string)null);
+                });
+
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("varchar(40)")
+                        .HasColumnName("ConcurrencyStamp");
+
+                    b.Property<string>("CreateUser")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("CreationTime");
+
+                    b.Property<Guid?>("CreatorId")
+                        .HasColumnType("char(36)")
+                        .HasColumnName("CreatorId");
+
+                    b.Property<string>("Data")
+                        .HasColumnType("longtext");
 
                     b.Property<Guid?>("DeleterId")
                         .HasColumnType("char(36)")
@@ -618,6 +718,9 @@ namespace MMS.DataManager.Migrations
                         .HasColumnType("char(36)")
                         .HasColumnName("LastModifierId");
 
+                    b.Property<string>("ModifyUser")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext");
 
@@ -626,37 +729,30 @@ namespace MMS.DataManager.Migrations
                     b.ToTable("AppProjectTemplate", (string)null);
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectTemplateField", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectUser", b =>
                 {
                     b.Property<Guid>("Id")
                         .HasColumnType("char(36)");
 
-                    b.Property<string>("DefaultValue")
-                        .HasColumnType("longtext");
+                    b.Property<Guid>("ProjectID")
+                        .HasColumnType("char(36)");
 
-                    b.Property<string>("FieldLable")
-                        .HasColumnType("longtext");
+                    b.Property<Guid?>("ProjectInfoId")
+                        .HasColumnType("char(36)");
 
-                    b.Property<int>("FieldType")
+                    b.Property<int>("Role")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IsRequired")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<bool>("IsVisible")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("longtext");
-
-                    b.Property<Guid>("ProjectTemplateId")
+                    b.Property<Guid>("UserId")
                         .HasColumnType("char(36)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectTemplateId");
+                    b.HasIndex("ProjectInfoId");
 
-                    b.ToTable("AppProjectTemplateField", (string)null);
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AppProjectUser", (string)null);
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>
@@ -2098,39 +2194,74 @@ namespace MMS.DataManager.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectFieldValue", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectClassification", b =>
                 {
-                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectTemplateField", "Field")
+                    b.HasOne("Volo.Abp.Identity.OrganizationUnit", "Organization")
                         .WithMany()
-                        .HasForeignKey("FieldId");
+                        .HasForeignKey("OrganizationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectInfo", null)
-                        .WithMany("FiledValues")
-                        .HasForeignKey("ProjectInfoId");
+                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectClassification", "Parent")
+                        .WithMany("Children")
+                        .HasForeignKey("ParentId");
 
-                    b.Navigation("Field");
+                    b.Navigation("Organization");
+
+                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectInfo", b =>
                 {
-                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", "ProjectTemplate")
+                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectClassification", "Classification")
                         .WithMany()
-                        .HasForeignKey("ProjectTemplateId")
+                        .HasForeignKey("ClassificationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProjectTemplate");
+                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", "Template")
+                        .WithMany()
+                        .HasForeignKey("TemplateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Classification");
+
+                    b.Navigation("Template");
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectTemplateField", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectOrganization", b =>
                 {
-                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", "ProjectTemplate")
-                        .WithMany("Fields")
-                        .HasForeignKey("ProjectTemplateId")
+                    b.HasOne("Volo.Abp.Identity.OrganizationUnit", "Organization")
+                        .WithMany()
+                        .HasForeignKey("OrganizationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProjectTemplate");
+                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectInfo", "ProjectInfo")
+                        .WithMany("ProjectOrganizations")
+                        .HasForeignKey("ProjectInfoId");
+
+                    b.Navigation("Organization");
+
+                    b.Navigation("ProjectInfo");
+                });
+
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectUser", b =>
+                {
+                    b.HasOne("MMS.DataManager.Project.AggregateRoot.ProjectInfo", "ProjectInfo")
+                        .WithMany("ProjectUsers")
+                        .HasForeignKey("ProjectInfoId");
+
+                    b.HasOne("Volo.Abp.Identity.IdentityUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectInfo");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLogAction", b =>
@@ -2262,14 +2393,16 @@ namespace MMS.DataManager.Migrations
                     b.Navigation("Details");
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectInfo", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectClassification", b =>
                 {
-                    b.Navigation("FiledValues");
+                    b.Navigation("Children");
                 });
 
-            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectTemplate", b =>
+            modelBuilder.Entity("MMS.DataManager.Project.AggregateRoot.ProjectInfo", b =>
                 {
-                    b.Navigation("Fields");
+                    b.Navigation("ProjectOrganizations");
+
+                    b.Navigation("ProjectUsers");
                 });
 
             modelBuilder.Entity("Volo.Abp.AuditLogging.AuditLog", b =>

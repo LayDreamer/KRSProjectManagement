@@ -5,9 +5,10 @@ namespace MMS.DataManager.EntityFrameworkCore
     [ConnectionStringName("Default")]
     public interface IDataManagerDbContext : IEfCoreDbContext
     {
+        DbSet<ProjectInfo> ProjectInfos { get; set; }
         DbSet<ProjectTemplate> ProjectTemplates { get; set; }
-        DbSet<ProjectTemplateField> ProjectTemplateFields { get; set; }
-        DbSet<ProjectInfo> Projects { get; set; }
-        DbSet<ProjectFieldValue> ProjectFieldValues { get; set; }
+        DbSet<ProjectUser> ProjectUsers { get; set; }
+        DbSet<ProjectOrganization> ProjectOrganizations { get; set; }
+        DbSet<ProjectClassification> ProjectClassifications { get; set; }
     }
 }

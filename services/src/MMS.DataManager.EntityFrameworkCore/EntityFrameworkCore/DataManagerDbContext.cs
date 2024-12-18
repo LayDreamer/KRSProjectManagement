@@ -48,10 +48,11 @@ namespace MMS.DataManager.EntityFrameworkCore
         public DbSet<DataDictionary> DataDictionaries { get;  set; }
         public DbSet<Language> Languages { get; set; }
         public DbSet<LanguageText> LanguageTexts { get; set; }
+        public DbSet<ProjectInfo> ProjectInfos { get; set; }
         public DbSet<ProjectTemplate> ProjectTemplates { get; set; }
-        public DbSet<ProjectTemplateField> ProjectTemplateFields { get; set; }
-        public DbSet<ProjectInfo> Projects { get; set; }
-        public DbSet<ProjectFieldValue> ProjectFieldValues { get; set; }
+        public DbSet<ProjectUser> ProjectUsers { get; set; }
+        public DbSet<ProjectOrganization> ProjectOrganizations { get; set; }
+        public DbSet<ProjectClassification> ProjectClassifications { get; set; }
 
         public DataManagerDbContext(DbContextOptions<DataManagerDbContext> options)
             : base(options)

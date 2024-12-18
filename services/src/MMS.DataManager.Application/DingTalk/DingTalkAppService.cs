@@ -173,7 +173,7 @@ namespace MMS.DataManager.DingTalk
                                         await userManager.CreateAsync(addUser, password);
 
                                         user = await userManager.FindByNameAsync(userId);
-                                        await userManager.SetRolesAsync(user, ["admin"]);
+                                        await userManager.SetRolesAsync(user, new List<string>(){"admin"});
 
                                         var findUser = await userManager.FindByNameAsync(userId);
                                         await _identitySecurityLogManager.SaveAsync(new IdentitySecurityLogContext()
@@ -245,7 +245,7 @@ namespace MMS.DataManager.DingTalk
                         if (result.Succeeded)
                         {
                             user = await userManager.FindByNameAsync(item.Id.ToString());
-                            await userManager.SetRolesAsync(user, ["admin"]);
+                            await userManager.SetRolesAsync(user, new List<string>(){"admin"});
                             await userManager.AddToOrganizationUnitAsync(user.Id, parent.Id);
                         }
                     }

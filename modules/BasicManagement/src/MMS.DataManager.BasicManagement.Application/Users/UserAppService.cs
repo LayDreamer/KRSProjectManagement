@@ -7,6 +7,7 @@ using Volo.Abp.Account;
 using Volo.Abp.Auditing;
 using Volo.Abp.Uow;
 using IdentityRole = Volo.Abp.Identity.IdentityRole;
+using IdentityUser = Volo.Abp.Identity.IdentityUser;
 
 namespace MMS.DataManager.BasicManagement.Users
 {
@@ -18,7 +19,6 @@ namespace MMS.DataManager.BasicManagement.Users
         private readonly IIdentityUserRepository _identityUserRepository;
         private readonly IExcelExporter _excelExporter;
         private readonly IOptions<IdentityOptions> _options;
-
         public UserAppService(
             IIdentityUserAppService identityUserAppService,
             IdentityUserManager userManager,
@@ -179,6 +179,17 @@ namespace MMS.DataManager.BasicManagement.Users
                 throw new BusinessException(BasicManagementErrorCodes.UserNotExist);
             }
             return ObjectMapper.Map<Volo.Abp.Identity.IdentityUser, IdentityUserDto>(user);
+        }
+
+        public virtual async Task<List<IdentityUserDto>> GetUsersByNames(string name)
+        {
+            var users = await _identityUserAppService.GetListAsync(new GetIdentityUsersInput()
+            {
+                SkipCount = 0,
+                MaxResultCount = 1000,
+            });
+            var dtos = users.Items.Where(x => x.Name.Contains(name)).ToList();
+            return dtos;
         }
     }
 }
